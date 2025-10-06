@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "Jira Test Case Generator API",
+		"description": "Complete Postman collection for the Jira URL Parser & Test Case Generator API. This collection includes all endpoints for parsing Jira URLs and generating test cases using Gemini AI.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12345678"
+	},
+	"item": [
+		{
+			"name": "Health & Configuration",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"health"
+							]
+						},
+						"description": "Check if the API is running and healthy."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/config",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"config"
+							]
+						},
+						"description": "Get current API configuration including authentication status."
+					},
+					"response": []
+				},
+				{
+					"name": "Test Jira Connection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/test-jira",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"test-jira"
+							]
+						},
+						"description": "Test Jira API connection with configured credentials."
+					},
+					"response": []
+				}
+			],
+			"description": "Health check and configuration endpoints"
+		},
+		{
+			"name": "Jira URL Parsing",
+			"item": [
+				{
+					"name": "Parse Jira URL (Basic)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://infoedge.atlassian.net/browse/ABEMP-3728\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/parse",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"parse"
+							]
+						},
+						"description": "Parse a Jira URL and extract issue parameters using environment authentication."
+					},
+					"response": []
+				},
+				{
+					"name": "Parse Jira URL (With Auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://infoedge.atlassian.net/browse/ABEMP-3728\",\n  \"auth_token\": \"optional_custom_token_here\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/parse-with-auth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"parse-with-auth"
+							]
+						},
+						"description": "Parse a Jira URL with optional custom authentication token."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for parsing Jira URLs and extracting issue details"
+		},
+		{
+			"name": "Test Case Generation",
+			"item": [
+				{
+					"name": "Generate Test Cases",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://infoedge.atlassian.net/browse/ABEMP-3728\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/generate-test-cases",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"generate-test-cases"
+							]
+						},
+						"description": "Generate comprehensive test cases from a Jira URL using Gemini AI. This endpoint will:\n1. Parse the Jira URL\n2. Fetch issue details\n3. Generate test cases using AI\n4. Return structured test cases in JSON format"
+					},
+					"response": []
+				}
+			],
+			"description": "AI-powered test case generation endpoints"
+		},
+		{
+			"name": "API Documentation",
+			"item": [
+				{
+					"name": "Swagger UI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/docs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"docs"
+							]
+						},
+						"description": "Interactive API documentation (Swagger UI)"
+					},
+					"response": []
+				},
+				{
+					"name": "ReDoc Documentation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/redoc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"redoc"
+							]
+						},
+						"description": "Alternative API documentation (ReDoc)"
+					},
+					"response": []
+				},
+				{
+					"name": "API Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Get API information and available endpoints"
+					},
+					"response": []
+				}
+			],
+			"description": "API documentation and information endpoints"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string",
+			"description": "Base URL for the Jira Test Case Generator API"
+		}
+	]
+}

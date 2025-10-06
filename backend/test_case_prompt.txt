@@ -1,0 +1,75 @@
+You are a senior QA engineer with expertise in creating comprehensive test cases. Based on the following Jira issue description, generate detailed test cases in JSON format.
+
+**Jira Issue Description:**
+{description}
+
+**Instructions:**
+1. Analyze the requirements and functionality described in the issue
+2. Generate comprehensive test cases covering:
+   - Happy path scenarios
+   - Edge cases
+   - Error conditions
+   - Boundary value testing
+   - Negative test cases
+   - Integration scenarios (if applicable)
+
+3. **IMPORTANT: Generate a maximum of 10-15 test cases to ensure complete JSON response**
+
+4. For each test case, include:
+   - Test case ID (unique identifier)
+   - Test case title (brief description)
+   - Test case description (detailed steps)
+   - Preconditions (setup requirements)
+   - Test steps (step-by-step instructions)
+   - Expected results
+   - Test data (if applicable)
+   - Priority (High/Medium/Low)
+   - Test type (Functional/Integration/Performance/Security/UI)
+
+**Output Format:**
+Return the response as a valid JSON object with the following structure:
+
+```json
+{
+  "test_suite": {
+    "suite_name": "Test Suite for [Issue Title]",
+    "suite_description": "Comprehensive test cases for the described functionality",
+    "total_test_cases": 0,
+    "test_cases": [
+      {
+        "test_case_id": "TC_001",
+        "title": "Test case title",
+        "description": "Detailed test case description",
+        "preconditions": ["List of preconditions"],
+        "test_steps": [
+          {
+            "step_number": 1,
+            "step_description": "Step description",
+            "expected_result": "Expected outcome"
+          }
+        ],
+        "test_data": {
+          "input_data": "Sample input data",
+          "expected_output": "Expected output data"
+        },
+        "priority": "High",
+        "test_type": "Functional",
+        "estimated_duration": "5 minutes"
+      }
+    ]
+  }
+}
+```
+
+**Guidelines:**
+- Ensure test cases are specific, measurable, and executable
+- Include both positive and negative test scenarios
+- Consider different user roles and permissions if applicable
+- Include data validation and error handling test cases
+- Make test steps clear and unambiguous
+- Ensure test cases are independent and can be executed in any order
+- Include edge cases and boundary conditions
+- Consider performance implications if relevant
+- **Focus on the most critical test cases (max 10-15) to ensure complete response**
+
+Generate comprehensive test cases that would thoroughly validate the functionality described in the Jira issue.
